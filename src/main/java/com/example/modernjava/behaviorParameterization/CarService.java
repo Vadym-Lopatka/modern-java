@@ -5,13 +5,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class CarService {
 
-    public List<Car> filterCars(List<Car> cars, CarPredicate predicate) {
+    public List<Car> filterCars(List<Car> cars, Predicate<Car> predicate) {
         return cars.stream()
-                .filter(predicate::test)
+                .filter(predicate)
                 .collect(Collectors.toList());
     }
 
