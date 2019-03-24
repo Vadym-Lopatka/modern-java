@@ -2,5 +2,5 @@ package com.example.modernjava.behaviorParameterization;
 
 public interface CarPredicate {
 
-    boolean test(Car car);
+    boolean test(CarService.Car car);
 }

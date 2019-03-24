@@ -8,22 +8,22 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
-import static com.example.modernjava.behaviorParameterization.CarColors.*;
+import static com.example.modernjava.behaviorParameterization.CarService.CarColors.*;
 
 public class CarServiceTest {
 
     private CarService carService;
-    private List<Car> cars;
+    private List<CarService.Car> cars;
 
     @Before
     public void before() {
         carService = new CarService();
-        cars = Arrays.asList(new Car(1970, BLACK), new Car(1990, WHITE), new Car(2001, RED), new Car(getCurrentYear(), WHITE));
+        cars = Arrays.asList(new CarService.Car(1970, BLACK), new CarService.Car(1990, WHITE), new CarService.Car(2001, RED), new CarService.Car(getCurrentYear(), WHITE));
     }
 
     @Test
     public void colorFilterCarsTest() {
-        List<Car> whiteCars = carService.filterCars(this.cars, car -> WHITE.equals(car.getColor()));
+        List<CarService.Car> whiteCars = carService.filterCars(this.cars, car -> WHITE.equals(car.getColor()));
 
         Assert.assertEquals(2, whiteCars.size());
         Assert.assertEquals(WHITE, whiteCars.get(0).getColor());
@@ -32,7 +32,7 @@ public class CarServiceTest {
 
     @Test
     public void yearFilterCarsTest() {
-        List<Car> whiteCars = carService.filterCars(this.cars, car -> car.getYear() < getCurrentYear());
+        List<CarService.Car> whiteCars = carService.filterCars(this.cars, car -> car.getYear() < getCurrentYear());
 
         Assert.assertEquals(3, whiteCars.size());
     }
