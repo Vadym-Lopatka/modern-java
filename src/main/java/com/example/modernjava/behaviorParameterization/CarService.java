@@ -1,9 +1,5 @@
 package com.example.modernjava.behaviorParameterization;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -19,12 +15,33 @@ public class CarService {
     /**
      * simple Java Bean
      */
-    @Data
-    @NoArgsConstructor
-    @AllArgsConstructor
     public static class Car {
         private int year;
         private CarColors color;
+
+        public Car() {
+        }
+
+        public Car(int year, CarColors color) {
+            this.year = year;
+            this.color = color;
+        }
+
+        public int getYear() {
+            return year;
+        }
+
+        public void setYear(int year) {
+            this.year = year;
+        }
+
+        public CarColors getColor() {
+            return color;
+        }
+
+        public void setColor(CarColors color) {
+            this.color = color;
+        }
     }
 
     public enum CarColors {
