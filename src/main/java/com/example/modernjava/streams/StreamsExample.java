@@ -9,6 +9,7 @@ public class StreamsExample {
         List<Integer> integers = Arrays.asList(3, 4, 3, 5, 5, 4, 6);
 
         /*
+        FILTERING
             1. filter all even integers from a list
             2. remove duplicates
             3. println() elements that stayed
