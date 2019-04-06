@@ -5,21 +5,6 @@ import java.util.stream.Collectors;
 
 public class StreamExamples {
 
-    List<Integer> getUniqueEvenNumbersList(List<Integer> integers) {
-        return integers.stream()
-                .filter(i -> i % 2 == 0)
-                .distinct()
-                .collect(Collectors.toList());
-    }
-
-    List<Integer> getOrderedUniqueEvenNumbersList(List<Integer> integers) {
-        return integers.stream()
-                .filter(i -> i % 2 == 0)
-                .sorted()
-                .distinct()
-                .collect(Collectors.toList());
-    }
-
     List<Integer> getFirstNElementsFromList(int firstNToGet, List<Integer> integers) {
         return integers.stream()
                 .limit(firstNToGet)
@@ -31,4 +16,26 @@ public class StreamExamples {
                 .skip(firstNToSkip)
                 .collect(Collectors.toList());
     }
+
+    List<Integer> getEvenNumbers(List<Integer> integers) {
+        return integers.stream()
+                .filter(i -> i % 2 == 0)
+                .collect(Collectors.toList());
+    }
+
+    List<Integer> getUniqueEvenNumbers(List<Integer> integers) {
+        return integers.stream()
+                .filter(i -> i % 2 == 0)
+                .distinct()
+                .collect(Collectors.toList());
+    }
+
+    List<Integer> getOrderedUniqueEvenNumbers(List<Integer> integers) {
+        return integers.stream()
+                .filter(i -> i % 2 == 0)
+                .sorted()
+                .distinct()
+                .collect(Collectors.toList());
+    }
+
 }

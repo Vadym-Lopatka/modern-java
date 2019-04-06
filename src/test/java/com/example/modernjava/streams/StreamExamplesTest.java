@@ -12,16 +12,6 @@ public class StreamExamplesTest {
     private static final List<Integer> integers = Arrays.asList(3, 4, 3, 5, 5, 4, 6, 2);
 
     @Test
-    public void getUniqueEvenNumbersListTest() {
-        assertEquals(Arrays.asList(4, 6, 2), streamExamples.getUniqueEvenNumbersList(integers));
-    }
-
-    @Test
-    public void getOrderedUniqueEvenNumbersListTest() {
-        assertEquals(Arrays.asList(2, 4, 6), streamExamples.getOrderedUniqueEvenNumbersList(integers));
-    }
-
-    @Test
     public void getFirstNElementsFromListTest() {
         assertEquals(Arrays.asList(3, 4, 3), streamExamples.getFirstNElementsFromList(3, integers));
     }
@@ -29,5 +19,20 @@ public class StreamExamplesTest {
     @Test
     public void skipFirsNElementsFromListTest() {
         assertEquals(Arrays.asList(4, 6, 2), streamExamples.skipFirsNElementsFromList(5, integers));
+    }
+
+    @Test
+    public void getEvenNumbersFromListTest() {
+        assertEquals(Arrays.asList(4, 4, 6, 2), streamExamples.getEvenNumbers(integers));
+    }
+
+    @Test
+    public void getUniqueEvenNumbersFromListTest() {
+        assertEquals(Arrays.asList(4, 6, 2), streamExamples.getUniqueEvenNumbers(integers));
+    }
+
+    @Test
+    public void getOrderedUniqueEvenNumbersListTest() {
+        assertEquals(Arrays.asList(2, 4, 6), streamExamples.getOrderedUniqueEvenNumbers(integers));
     }
 }
